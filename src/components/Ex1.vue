@@ -1,8 +1,28 @@
 <script>
     export default { 
         // Add Code Here to complete the task
+        data(){
+            return{
+            x:0,
+            y:0,
+            operators:[ "+","-","*","/"],
+            selectedOp:"",
+            }
+            
         // Note: DO NOT USE "eval()". In security, "eval" is considered "evil"!!!
+    },
+    computed:{
+        result(){
+            switch(this.selectedOp){
+                case "+": return this.x+this.y;
+                case "-": return this.x-this.y;
+                case "*": return this.x*this.y;
+                case "/": return this.x/this.y;
+                case "%": return this.x%this.y;
+            }
+        }
     }
+}
 </script>
 
 <template>
