@@ -5,7 +5,7 @@ import axios from 'axios';
        // add code here
        data(){
         return{
-            moods:["happy","sad","angry"],
+            moods:["Happy", "Sad", "Angry"],
             subject:"",
             entry:"",
             selectedMood:"",
@@ -37,7 +37,7 @@ import axios from 'axios';
         this.entry = "";
         this.selectedMood = "";
               
-               outputMsg=response.data.message;
+               this.outputMsg=response.data.message;
             
             })
             .catch(error => {
@@ -68,8 +68,9 @@ import axios from 'axios';
 
 
         <br>
-         <p v-if="outputMsg">{{ outputMsg }}</p>
+         
         <br>
+        <p v-if="outputMsg">{{ outputMsg }}</p>
         <button @click="addPost()">Submit New Post</button>
 
         <hr> Click  <a><router-link to="/ViewPosts/">here</router-link></a>  to return to Main Page
